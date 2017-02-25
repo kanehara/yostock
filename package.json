@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/kanehara/yostock#readme",
   "dependencies": {
+    "express": "^4.14.1",
     "react": "^15.4.2"
   }
 }
