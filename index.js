@@ -1,11 +1,12 @@
-var express = require('express')
-var app = express()
+/**
+ * ENTRY SCRIPT
+ */
 
-// respond with "hello world" when a GET request is made to the homepage
-app.get('/', function (req, res) {
-  res.send('hello world')
-})
-
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
-})
+// TODO: configure prod build
+if (process.env.NODE_ENV === 'production') {
+    console.log('PROD MODE!');
+} else {
+    require('babel-register');
+    require('babel-polyfill');
+    require('./server/server.js');
+}
