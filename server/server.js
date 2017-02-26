@@ -1,8 +1,11 @@
-var express = require("express");
-var webpackDevMiddleware = require("webpack-dev-middleware");
-var webpackHotMiddleware = require("webpack-hot-middleware");
-var webpack = require("webpack");
-var webpackConfig = require("../config/webpack.config.dev.js");
+import express from 'express';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
+import webpack from 'webpack';
+import webpackConfig from '../config/webpack.config.dev.js';
+import ReactDOMServer from 'react-dom/server';
+import React from 'react';
+import App from '../client/modules/App/App.js';
 
 var app = express();
 
@@ -17,9 +20,24 @@ if (process.env.NODE_ENV === 'development') {
 
 // TODO: Server Side Rendering based on routes matched by React-router.
 app.use((req, res, next) => {
-  res.send('hello world1');
+  const AppComponent = React.createFactory(App)
+  let initialView = ReactDOMServer.renderToString(AppComponent({ world: "world" }))
+  res.send(initialView);
 });
 
-app.listen(3000, function () {
+const renderPage = (html, initialState) => {
+  return `
+    <!doctype html>
+    <html>
+      <head>
+      </head>
+      <body>
+        <div id="root">${html}</div>
+      </body>
+    </html>
+  `
+}
+
+app.listen(3000, function() {
   console.log('Example app listening on port 3000!')
 });
