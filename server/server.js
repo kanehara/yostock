@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === 'development') {
 app.use((req, res, next) => {
   const AppComponent = React.createFactory(App)
   let initialView = ReactDOMServer.renderToString(AppComponent({ world: "world" }))
-  res.send(initialView);
+  res.send(renderPage(initialView, null));
 });
 
 const renderPage = (html, initialState) => {
