@@ -1,13 +1,11 @@
 import path from 'path';
 import webpack from 'webpack';
 
-module.exports = {
+const commonConfig = {
   entry: 'index.js',
 
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname),
-    publicPath: 'http://0.0.0.0:3000/'
+    path: path.resolve(__dirname, "dist")
   },
 
   resolve: {
@@ -19,19 +17,21 @@ module.exports = {
   },
 
   module: {
-    rules: [{
-      test: /\.js$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/
-    }, {
-      test: /\.jsx*$/,
-      loader: 'babel-loader',
-      exclude: [/node_modules/, /.+\.config.js/]
-    }, {
-      test: /\.json$/,
-      loader: 'json-loader',
-      exclude: [/node_modules/]
-    }, ],
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      }, {
+        test: /\.jsx*$/,
+        loader: 'babel-loader',
+        exclude: [/node_modules/, /.+\.config.js/]
+      }, {
+        test: /\.json$/,
+        loader: 'json-loader',
+        exclude: [/node_modules/]
+      },
+    ],
   },
 
   plugins: [
@@ -47,5 +47,7 @@ module.exports = {
         'NODE_ENV': JSON.stringify('development'),
       }
     }),
-  ],
+  ]
 }
+
+export default commonConfig;
