@@ -7,7 +7,7 @@ import ReactDOMServer from 'react-dom/server';
 import React from 'react';
 import App from '../client/modules/App/App.js';
 
-var app = express();
+let app = express();
 
 if (process.env.NODE_ENV === 'development') {
   const compiler = webpack(webpackConfig);
@@ -25,7 +25,7 @@ app.use((req, res, next) => {
   res.send(renderPage(initialView, null));
 });
 
-const renderPage = (html, initialState) => {
+function renderPage(html, initialState) {
   return `
     <!doctype html>
     <html>
