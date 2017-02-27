@@ -7,6 +7,12 @@
     "start": "NODE_ENV=development nodemon index.js",
     "start:prod": "NODE_ENV=production node index.js"
   },
+  "browserslist": [
+    ">1%",
+    "last 4 versions",
+    "Firefox ESR",
+    "not ie < 9"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kanehara/yostock.git"
@@ -27,8 +33,9 @@
     "babel-cli": "^6.23.0",
     "babel-loader": "^6.3.2",
     "babel-polyfill": "^6.23.0",
-    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-env": "^1.1.10",
     "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.23.0",
     "css-loader": "^0.26.2",
     "json-loader": "^0.5.4",
