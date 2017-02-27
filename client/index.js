@@ -1,14 +1,12 @@
-import render from 'react-dom';
-import AppContainer from 'react-hot-loader';
-import App from './modules/App';
+import ReactDom from 'react-dom';
+import { App } from './modules/App';
+import React from 'react';
 
 const rootDomEl = document.getElementById('root');
 
 function renderPage() {
-  render(
-      <AppContainer>
-        <App world="world"></App>
-      </AppContainer>,
+  ReactDom.render(
+      <App world="world"></App>,
       rootDomEl
   );
 }

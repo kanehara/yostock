@@ -1,5 +1,5 @@
-import path from 'path';
-import webpack from 'webpack';
+import path from "path";
+import webpack from "webpack";
 
 const commonConfig = {
   entry: 'index.js',
@@ -38,7 +38,6 @@ const commonConfig = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: Infinity,
       filename: 'vendor.js',
     }),
     new webpack.DefinePlugin({
