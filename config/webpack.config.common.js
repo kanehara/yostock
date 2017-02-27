@@ -39,6 +39,7 @@ const commonConfig = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'vendor.js',
+      minChunks: Infinity
     }),
     new webpack.DefinePlugin({
       'process.env': {
