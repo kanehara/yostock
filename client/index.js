@@ -1,5 +1,5 @@
 import ReactDom from 'react-dom';
-import { App } from './modules/App';
+import { App } from './components/App';
 import React from 'react';
 
 const rootDomEl = document.getElementById('root');
@@ -14,7 +14,7 @@ renderPage();
 
 // TODO: implement hot reloading
 // if (module.hot) {
-//   module.hot.accept('./modules/App', () => {
+//   module.hot.accept('./components/app', () => {
 //     renderPage();
 //   })
 // }
