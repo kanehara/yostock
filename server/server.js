@@ -2,12 +2,10 @@ import express from 'express';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpack from 'webpack';
-import webpackConfig from '../config/webpack.config.dev.js';
-import ReactDOMServer from 'react-dom/server';
+import webpackConfig from '../config/webpack.config.client.js';
 import React from 'react';
-import App from '../client/modules/App/App.js';
 
-var app = express();
+let app = express();
 
 if (process.env.NODE_ENV === 'development') {
   const compiler = webpack(webpackConfig);
@@ -18,14 +16,12 @@ if (process.env.NODE_ENV === 'development') {
   app.use(webpackHotMiddleware(compiler));
 }
 
-// TODO: Server Side Rendering based on routes matched by React-router.
+// TODO: Server Side Rendering
 app.use((req, res, next) => {
-  const AppComponent = React.createFactory(App)
-  let initialView = ReactDOMServer.renderToString(AppComponent({ world: "world" }))
-  res.send(renderPage(initialView, null));
+  res.send(renderPage('', null));
 });
 
-const renderPage = (html, initialState) => {
+function renderPage(html, initialState) {
   return `
     <!doctype html>
     <html>
@@ -34,6 +30,8 @@ const renderPage = (html, initialState) => {
       <body>
         <div id="root">${html}</div>
       </body>
+      <script src='/assets/vendor.js'></script>
+      <script src='/assets/bundle.js'></script>
     </html>
   `
 }
