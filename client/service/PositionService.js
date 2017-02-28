@@ -34,7 +34,7 @@ const PositionService = {
       "totalPages": 1
     }
 
-    return mockPositionsResponse
+    return mockPositionsResponse.positions;
   }
 }
 

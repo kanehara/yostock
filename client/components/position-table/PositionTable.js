@@ -1,13 +1,14 @@
 import React from 'react';
+import { PositionSymbol } from './position-row';
+import { PositionRow } from "./position-row/PositionRow";
 
-export class PositionTable extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+export function PositionTable(props) {
+    const positionRows = props.positions.map(position => {
+      return <PositionRow position = { position } key = { position.symbol }/>
+    })
     return (
-        <div>hello world</div>
+        <div>
+          { positionRows }
+        </div>
     )
-  }
 }

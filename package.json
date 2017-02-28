@@ -4,7 +4,7 @@
   "description": "A React based stock market visualizer",
   "scripts": {
     "clean": "rimraf dist",
-    "start": "NODE_ENV=development nodemon index.js",
+    "start": "NODE_ENV=development nodemon --ignore client/ index.js",
     "start:prod": "NODE_ENV=production node index.js"
   },
   "browserslist": [
