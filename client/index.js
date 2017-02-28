@@ -6,7 +6,7 @@ const rootDomEl = document.getElementById('root');
 
 function renderPage() {
   ReactDom.render(
-      <App world="world"></App>,
+      <App></App>,
       rootDomEl
   );
 }

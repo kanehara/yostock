@@ -1,7 +1,8 @@
-import React from 'react';
+import React from 'react'
+import { PositionTableContainer } from '../position-table/PositionTableContainer'
 
 export function App(props) {
   return (
-    <div>hello {props.world}</div>
+    <PositionTableContainer/>
   );
 }
