@@ -1,13 +1,19 @@
 import React from 'react'
 import { PositionSymbol } from './PositionSymbol'
+import { PositionBasisValue } from './PositionBasisValue'
+import { PositionCurrentValue } from './PositionCurrentValue'
 
 export function PositionRow(props) {
+  const style = {
+    display: 'flex',
+    alignItems: 'stretch'
+  }
+
   return (
-      <PositionSymbol
-          symbol = { props.position.symbol }
-          quantity = { props.position.quantity }
-          todayGainLossDollar = { props.position.todayGainLossDollar }
-          todayGainLossPercentage = { props.position.todayGainLossPercentage }
-      ></PositionSymbol>
+      <div style={style}>
+        <PositionSymbol position={props.position}></PositionSymbol>
+        <PositionBasisValue position={props.position}></PositionBasisValue>
+        <PositionCurrentValue position={props.position}></PositionCurrentValue>
+      </div>
   )
 }
