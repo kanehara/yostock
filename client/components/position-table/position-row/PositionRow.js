@@ -12,10 +12,10 @@ export function PositionRow(props) {
 
   return (
       <div style={style}>
-        <PositionSymbol position={props.position}></PositionSymbol>
-        <PositionBasisValue position={props.position}></PositionBasisValue>
-        <PositionCurrentValue position={props.position}></PositionCurrentValue>
-        <PositionTotalGainLoss position={props.position}></PositionTotalGainLoss>
+        <PositionSymbol position={props.position}/>
+        <PositionBasisValue position={props.position}/>
+        <PositionCurrentValue position={props.position}/>
+        <PositionTotalGainLoss position={props.position}/>
       </div>
   )
 }

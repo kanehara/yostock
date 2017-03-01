@@ -15,7 +15,7 @@ export function PositionBasisValue(props) {
   return (
       <div style={style}>
         <h3>Cost Basis</h3>
-        <ValueSummary perShareValue={perShareValue} totalValue={costBasis}></ValueSummary>
+        <ValueSummary perShareValue={perShareValue} totalValue={costBasis}/>
       </div>
   )
 }

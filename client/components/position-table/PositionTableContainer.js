@@ -1,18 +1,18 @@
 import React from 'react'
-import PositionService from '../../service/PositionService'
+import services from '../../services'
 import { PositionTable } from './PositionTable'
 
 export class PositionTableContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      positions: PositionService.getPositions()
+      positions: services.PositionService.getPositions()
     }
   }
 
   render() {
     return (
-        <PositionTable positions={this.state.positions}></PositionTable>
+        <PositionTable positions={this.state.positions}/>
     )
   }
 }

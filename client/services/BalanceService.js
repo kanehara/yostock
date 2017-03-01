@@ -1,4 +1,4 @@
-const BalanceService = {
+export const BalanceService = {
   getBalance: function() {
 
     const mockBalanceResponse = {
@@ -16,8 +16,6 @@ const BalanceService = {
       "totalValue": 1694.16
     }
 
-    return mockBalanceResponse;
+    return mockBalanceResponse
   }
 }
-
-export default PositionService

@@ -1,5 +1,5 @@
 import React from 'react'
-import { GainLoss } from './GainLoss'
+import { GainLoss } from '../../gainloss/GainLoss'
 
 export function PositionTotalGainLoss(props) {
   const style = {
@@ -12,7 +12,7 @@ export function PositionTotalGainLoss(props) {
         <GainLoss
             gainLossDollar={props.position.totalGainLossDollar}
             gainLossPercentage={props.position.totalGainLossPercentage}
-        ></GainLoss>
+        />
       </div>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { GainLoss } from './GainLoss'
+import { GainLoss } from '../../gainloss/GainLoss'
 
 export function PositionSymbol(props) {
   const style = {
@@ -14,7 +14,7 @@ export function PositionSymbol(props) {
       <GainLoss
           gainLossDollar = { props.position.todayGainLossDollar }
           gainLossPercentage = { props.position.todayGainLossPercentage }
-      ></GainLoss>
+      />
     </div>
   )
 }

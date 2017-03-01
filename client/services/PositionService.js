@@ -1,4 +1,4 @@
-const PositionService = {
+export const PositionService = {
   getPositions: function() {
 
     const mockPositionsResponse = {
@@ -37,5 +37,3 @@ const PositionService = {
     return mockPositionsResponse.positions;
   }
 }
-
-export default PositionService

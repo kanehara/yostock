@@ -15,7 +15,7 @@ export function PositionCurrentValue(props) {
   return (
       <div style={style}>
         <h3>Current Value:</h3>
-        <ValueSummary perShareValue={perShareValue} totalValue={totalValue}></ValueSummary>
+        <ValueSummary perShareValue={perShareValue} totalValue={totalValue}/>
       </div>
   )
 }
