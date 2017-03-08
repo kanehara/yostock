@@ -6,23 +6,28 @@ export function Balance(props) {
     display: 'flex'
   }
 
-  const smallColStyle = {
-    flexGrow: 1
-  }
-  const largeColStyle = {
-    flexGrow: 3
+  const colStyle = {
+    margin: '10px'
   }
 
   return (
     <div style={style}>
-      <div style={smallColStyle}>{props.balance.availableCash}</div>
-      <div style={smallColStyle}>{props.balance.buyingPower}</div>
-      <div style={largeColStyle}>
+      <div style={colStyle}>
+        <h3>Available Cash:</h3>
+        {props.balance.availableCash}
+      </div>
+      <div style={colStyle}>
+        <h3>Buying Power:</h3>
+        {props.balance.buyingPower}
+      </div>
+      <div style={colStyle}>
+        <h3>Day Gain/Loss:</h3>
         <GainLoss
             gainLossDollar={props.balance.dayAbsoluteReturn}
             gainLossPercentage={props.balance.dayPercentReturn}/>
       </div>
-      <div style={largeColStyle}>
+      <div style={colStyle}>
+        <h3>Total Gain/Loss:</h3>
         <GainLoss
             gainLossDollar={props.balance.totalAbsoluteReturn}
             gainLossPercentage={props.balance.totalPercentReturn}/>
