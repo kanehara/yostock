@@ -4,6 +4,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpack from 'webpack';
 import webpackConfig from '../config/webpack.config.client.js';
 import React from 'react';
+import apiRouter from './api';
 
 let app = express();
 
@@ -16,8 +17,11 @@ if (process.env.NODE_ENV === 'development') {
   app.use(webpackHotMiddleware(compiler));
 }
 
-// TODO: Server Side Rendering
-app.use((req, res, next) => {
+/**
+ * Server side rendering
+ */
+// TODO: Server Side React Rendering
+app.use('/home', (req, res, next) => {
   res.send(renderPage('', null));
 });
 
@@ -35,6 +39,11 @@ function renderPage(html, initialState) {
     </html>
   `
 }
+
+/**
+ * The API
+ */
+app.use('/api', apiRouter);
 
 app.listen(3000, function() {
   console.log('Example app listening on port 3000!')

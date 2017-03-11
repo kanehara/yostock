@@ -24,7 +24,9 @@
   },
   "homepage": "https://github.com/kanehara/yostock#readme",
   "dependencies": {
+    "axios": "^0.15.3",
     "babel-core": "^6.23.1",
+    "dotenv": "^4.0.0",
     "express": "^4.14.1",
     "radium": "^0.18.1",
     "react": "^15.4.2",

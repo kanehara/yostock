@@ -1,5 +1,9 @@
+import axios from 'axios';
+
 export const BalanceService = {
   getBalance: function() {
+
+    axios.get('/api');
 
     const mockBalanceResponse = {
       "availableCash": 0,
