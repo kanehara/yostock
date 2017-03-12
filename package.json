@@ -26,6 +26,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "babel-core": "^6.23.1",
+    "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",
     "express": "^4.14.1",
     "radium": "^0.18.1",

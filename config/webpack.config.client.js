@@ -16,5 +16,5 @@ module.exports = {
     publicPath: '/assets/'
   },
 
-  devtool: 'eval-source-map'
+  devtool: 'cheap-module-source-map'
 }
