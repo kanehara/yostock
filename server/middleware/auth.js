@@ -1,4 +1,10 @@
-export function auth(req, res, next) {
+export default function auth(req, res, next) {
+  console.info('auth called');
+  if (req.originalUrl === '/login') {
+    next();
+    return;
+  }
+
   let { signedCookies: { sessionToken } } = req;
   if (sessionToken) {
     next();
