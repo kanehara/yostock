@@ -3,7 +3,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpack from 'webpack';
 import webpackConfig from '../../config/webpack.config.client.js';
 
-export function setupDevMiddleware(app) {
+export default function setupDevMiddleware(app) {
   const compiler = webpack(webpackConfig);
   app.use(webpackDevMiddleware(compiler, {
     noInfo: true,
