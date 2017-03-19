@@ -1,6 +1,6 @@
 import express from 'express';
 
-let loginRouter = express.Router();
+const loginRouter = express.Router();
 
 loginRouter.use((req, res, next) => {
   console.log('login route');
@@ -8,4 +8,6 @@ loginRouter.use((req, res, next) => {
 
 loginRouter.get('/login', (req, res) => {
 
-})
+});
+
+export default loginRouter;
