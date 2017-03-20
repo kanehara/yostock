@@ -1,16 +1,15 @@
-import React from 'react'
-import { PositionTableContainer } from '../position-table/PositionTableContainer'
-import { BalanceContainer } from '../balance/BalanceContainer'
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Login } from '../login';
+import Home from './Home';
 
 export function App(props) {
-  const style = {
-    margin: '50px'
-  }
-
   return (
-    <div style={style}>
-      <BalanceContainer/>
-      <PositionTableContainer/>
-    </div>
+    <Router>
+      <div>
+        <Route exact={true} path="/" component={Home}/>
+        <Route path="/login" component={Login}/>
+      </div>
+    </Router>
   );
 }

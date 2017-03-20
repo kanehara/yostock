@@ -1,10 +1,6 @@
 import express from 'express'
+import TradeItApiBaseUrl from './constants';
 const apiRouter = express.Router()
-
-const tradeItVersion = 'v1'
-const tradeItHost = process.env.NODE_ENV === 'production' ?
-    'https://ems.tradingticket.com/api/' + tradeItVersion :
-    'https://ems.qa.tradingticket.com/api/' + tradeItVersion
 
 apiRouter.use((req, res, next) => {
   console.log('api route');
@@ -13,7 +9,7 @@ apiRouter.use((req, res, next) => {
 
 // TODO complete
 apiRouter.get('/balance/getAccountOverview', (req, res) => {
-  const endpoint = tradeItHost + '/balance/getAccountOverview';
+  const endpoint = TradeItApiBaseUrl + '/balance/getAccountOverview';
   console.log('getBalance called');
 
   const mockBalanceResponse = {

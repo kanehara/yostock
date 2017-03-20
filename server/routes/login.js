@@ -1,13 +1,15 @@
 import express from 'express';
+import tradeItBaseUrl from './constants';
+import { renderPage } from '../app';
 
 const loginRouter = express.Router();
+const oAuthPopUpUrl = tradeItBaseUrl + '/user/getOAuthLoginPopupUrlForWebApp';
+const oAuthAccessTokenUrl = tradeItBaseUrl + '/user/getOAuthAccessToken';
+const oAuthAuthenticateUrl = tradeItBaseUrl + '/user/authenticate?srv=';
 
-loginRouter.use((req, res, next) => {
-  console.log('login route');
-});
-
-loginRouter.get('/login', (req, res) => {
-
+loginRouter.get('/login', (req, res, next) => {
+  res.send(renderPage('', null));
+  next();
 });
 
 export default loginRouter;
