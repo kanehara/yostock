@@ -1,34 +1,16 @@
 {
-  "name": "yostock",
+  "name": "yostock-client",
   "version": "1.0.0",
-  "description": "A React based stock market visualizer",
-  "scripts": {
-    "clean": "rimraf dist",
-    "start": "NODE_ENV=development nodemon --ignore client/ index.js",
-    "start:prod": "NODE_ENV=production node index.js"
-  },
+  "description": "YoStock client side package",
   "browserslist": [
     ">1%",
     "last 4 versions",
     "Firefox ESR",
     "not ie < 9"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kanehara/yostock.git"
-  },
-  "author": "Yohei Kanehara kanehara@umich.edu",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kanehara/yostock/issues"
-  },
-  "homepage": "https://github.com/kanehara/yostock#readme",
   "dependencies": {
     "axios": "^0.15.3",
     "babel-core": "^6.23.1",
-    "cookie-parser": "^1.4.3",
-    "dotenv": "^4.0.0",
-    "express": "^4.14.1",
     "radium": "^0.18.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -44,12 +26,7 @@
     "babel-register": "^6.23.0",
     "css-loader": "^0.26.2",
     "json-loader": "^0.5.4",
-    "nodemon": "^1.11.0",
     "react-hot-loader": "^3.0.0-beta.2",
-    "rimraf": "^2.6.1",
-    "webpack": "^2.2.1",
-    "webpack-dev-middleware": "^1.10.1",
-    "webpack-dev-server": "^2.4.1",
-    "webpack-hot-middleware": "^2.17.1"
+    "webpack": "^2.2.1"
   }
 }
