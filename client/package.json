@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "YoStock server",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha **/_tests_/*.spec.js --compilers js:babel-core/register"
+  },
+  "keywords": [
+    "YoStock",
+    "server"
+  ],
+  "author": "Yohei Kanehara - kanehara@umich.edu",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.2.0",
+    "morgan": "^1.8.1",
+    "sinon": "^2.0.0",
+    "winston": "^2.3.1"
+  }
+}
