@@ -1,8 +1,8 @@
 import path from "path";
 import webpack from "webpack";
 
-const commonConfig = {
-  entry: 'index.js',
+const devConfig = {
+  entry: ['babel-polyfill', './client/index.js'],
 
   output: {
     path: path.resolve(__dirname, "dist")
@@ -43,11 +43,18 @@ const commonConfig = {
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        CLIENT: JSON.stringify(true),
-        'NODE_ENV': JSON.stringify('development'),
+        NODE_ENV: JSON.stringify('development'),
       }
     }),
-  ]
+  ],
+
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/assets/'
+  },
+
+  devtool: 'cheap-module-source-map'
 }
 
-export default commonConfig;
+export default devConfig;
