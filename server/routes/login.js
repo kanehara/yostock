@@ -1,6 +1,6 @@
 import express from 'express';
 import tradeItBaseUrl from './constants';
-import { renderPage } from '../app';
+import { renderPage } from '../util/render-page';
 
 const loginRouter = express.Router();
 const oAuthPopUpUrl = tradeItBaseUrl + '/user/getOAuthLoginPopupUrlForWebApp';

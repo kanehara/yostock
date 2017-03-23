@@ -1,3 +1,5 @@
+require('dotenv').config();
+require('babel-register');
 import app from './app';
 
 app.listen(3000, function() {

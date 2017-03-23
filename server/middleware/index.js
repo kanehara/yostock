@@ -1,4 +1,3 @@
-import setupDevMiddleware from './dev';
 import logger from './logger';
 import cookieParser from "cookie-parser";
 import auth from './auth';
@@ -8,11 +7,6 @@ import auth from './auth';
  * @param app - Express app instance
  */
 export default function init(app) {
-
-  // Webpack dev server
-  if (process.env.NODE_ENV === 'development') {
-    setupDevMiddleware(app);
-  }
 
   // Logging
   app.use(logger);

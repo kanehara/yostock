@@ -1,8 +1,8 @@
-import path from "path";
-import webpack from "webpack";
+const path = require("path");
+const webpack = require("webpack");
 
 const devConfig = {
-  entry: ['babel-polyfill', './client/index.js'],
+  entry: path.join(__dirname, "src", "dist"),
 
   output: {
     path: path.resolve(__dirname, "dist")
@@ -11,7 +11,7 @@ const devConfig = {
   resolve: {
     extensions: ['.js', '.jsx'],
     modules: [
-      'client',
+      path.resolve(__dirname),
       'node_modules'
     ],
   },
@@ -57,4 +57,4 @@ const devConfig = {
   devtool: 'cheap-module-source-map'
 }
 
-export default devConfig;
+module.exports = devConfig;

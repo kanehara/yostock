@@ -2,6 +2,8 @@ import express from "express";
 import React from "react";
 import { apiRouter, loginRouter } from "./routes";
 import init from "./middleware";
+import renderPage from "./util/render-page";
+
 
 
 let app = express();
@@ -35,20 +37,5 @@ app.get('/', (req, res, next) => {
   res.send(renderPage('', null));
   next();
 });
-
-export function renderPage(html, initialState) {
-  return `
-    <!doctype html>
-    <html>
-      <head>
-      </head>
-      <body>
-        <div id="root">${html}</div>
-      </body>
-      <script src='/assets/vendor.js'></script>
-      <script src='/assets/bundle.js'></script>
-    </html>
-  `
-}
 
 export default app;

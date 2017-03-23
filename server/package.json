@@ -16,17 +16,23 @@
     "express": "^4.14.1"
   },
   "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-preset-es2015-node": "^6.1.1",
+    "babel-preset-stage-2": "^6.22.0",
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
+    "json-loader": "^0.5.4",
     "mocha": "^3.2.0",
     "morgan": "^1.8.1",
     "nodemon": "^1.11.0",
     "sinon": "^2.0.0",
     "winston": "^2.3.1",
-    "webpack": "^2.2.1",
-    "webpack-dev-middleware": "^1.10.1",
-    "webpack-dev-server": "^2.4.1",
-    "webpack-hot-middleware": "^2.17.1"
-
+    "babel-register": "^6.23.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015-node",
+      "stage-2"
+    ]
   }
 }
